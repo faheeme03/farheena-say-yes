@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Sparkles, Volume2, VolumeX, RotateCcw, Send } from 'lucide-react';
+import { Heart, Sparkles, Volume2, VolumeX, RotateCcw } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import CuteBearCharacter from './components/CuteBearCharacter';
 import { sounds } from './utils/audio';
@@ -107,11 +107,6 @@ export default function App() {
     setNoButtonPosition({ x: 0, y: 0 });
   };
 
-  // WhatsApp share link
-  const whatsappMessage = encodeURIComponent(
-    "Ikkaa, I said YES! 🥰👑 You're stuck with me forever! ❤️✨"
-  );
-  const whatsappUrl = `https://api.whatsapp.com/send?text=${whatsappMessage}`;
 
   return (
     <div
@@ -272,47 +267,20 @@ export default function App() {
               </h2>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-[#7A445D] font-medium max-w-sm mb-4 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#7A445D] font-medium max-w-sm mb-5 leading-relaxed">
                 You are officially stuck with your Ikkaa forever, my princess Farheena! 💍👑
               </p>
 
-              {/* Sweet Polaroid Photo Memory */}
-              <div className="w-56 sm:w-64 bg-white rounded-2xl p-3 pb-4 shadow-lg border border-pink-100/90 -rotate-2 hover:rotate-0 transition-transform my-2">
-                <div className="w-12 h-3.5 bg-pink-100 border-x border-pink-200/60 shadow-xs -mt-5 mx-auto mb-2 rounded-xs" />
-                <div className="w-full h-56 rounded-xl overflow-hidden bg-pink-50">
-                  <img
-                    src="/photos/photo-hearts-chin.jpg"
-                    alt="Farheena & Faheem"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <p className="font-script text-xl text-[#D84A6E] font-bold mt-2">
-                  Forever My Princess 💖
-                </p>
-              </div>
-
               {/* Date & Vow Badge */}
-              <div className="mt-4 px-5 py-2 rounded-full bg-white/90 border border-[#F497B6] shadow-sm text-xs sm:text-sm font-bold text-[#8E5B72]">
+              <div className="px-5 py-2 rounded-full bg-white/90 border border-[#F497B6] shadow-sm text-xs sm:text-sm font-bold text-[#8E5B72] mb-6">
                 November 18, 2026 • Forever My Princess Day 👑
               </div>
 
-              {/* Action Buttons */}
-              <div className="mt-6 flex flex-col sm:flex-row items-center gap-3 w-full justify-center">
-                {/* Send WhatsApp Message to Ikkaa */}
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2.5 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-sm shadow-md flex items-center gap-2 active:scale-95 transition-all"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send to Ikkaa 💌</span>
-                </a>
-
-                {/* Play again */}
+              {/* Play again button */}
+              <div className="flex justify-center w-full">
                 <button
                   onClick={handleReset}
-                  className="px-5 py-2.5 rounded-full bg-white text-[#7A445D] font-bold text-sm border border-[#F497B6]/70 shadow-sm hover:bg-pink-50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
+                  className="px-6 py-2.5 rounded-full bg-white text-[#7A445D] font-bold text-sm border border-[#F497B6]/70 shadow-sm hover:bg-pink-50 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
                 >
                   <RotateCcw className="w-4 h-4 text-[#D84A6E]" />
                   <span>Play again ↺</span>
