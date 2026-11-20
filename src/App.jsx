@@ -267,14 +267,9 @@ export default function App() {
               </h2>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg text-[#7A445D] font-medium max-w-sm mb-5 leading-relaxed">
+              <p className="text-base sm:text-lg text-[#7A445D] font-medium max-w-sm mb-6 leading-relaxed">
                 You are officially stuck with your Ikkaa forever, my princess Farheena! 💍👑
               </p>
-
-              {/* Date & Vow Badge */}
-              <div className="px-5 py-2 rounded-full bg-white/90 border border-[#F497B6] shadow-sm text-xs sm:text-sm font-bold text-[#8E5B72] mb-6">
-                November 18, 2026 • Forever My Princess Day 👑
-              </div>
 
               {/* Play again button */}
               <div className="flex justify-center w-full">
