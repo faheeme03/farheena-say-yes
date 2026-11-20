@@ -55,7 +55,7 @@ export default function App() {
     }, 850);
 
     // Grow the YES button
-    setYesScale((prev) => Math.min(prev + 0.35, 4.2));
+    setYesScale((prev) => Math.min(prev + 0.4, 4.5));
 
     // Calculate a random displacement within container bounds
     const maxX = 120;
@@ -201,16 +201,20 @@ export default function App() {
                 {/* YES BUTTON (Grows bigger on each NO attempt!) */}
                 <motion.button
                   onClick={handleYesClick}
-                  style={{
-                    transform: `scale(${yesScale})`,
+                  animate={{
+                    scale: yesScale,
                   }}
                   whileHover={{ scale: yesScale * 1.05 }}
                   whileTap={{ scale: yesScale * 0.95 }}
-                  transition={{ type: 'spring', stiffness: 350, damping: 22 }}
-                  className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#F497B6] to-[#D84A6E] text-white font-bold text-lg sm:text-xl shadow-[0_8px_25px_rgba(216,74,110,0.4)] hover:brightness-105 active:scale-95 transition-shadow z-30 cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
+                  transition={{ type: 'spring', stiffness: 320, damping: 20 }}
+                  style={{
+                    fontSize: `${Math.min(18 + noCount * 5, 36)}px`,
+                    padding: `${Math.min(14 + noCount * 6, 32)}px ${Math.min(32 + noCount * 12, 72)}px`,
+                  }}
+                  className="rounded-full bg-gradient-to-r from-[#F497B6] to-[#D84A6E] text-white font-bold shadow-[0_8px_30px_rgba(216,74,110,0.45)] hover:brightness-105 active:scale-95 transition-shadow z-30 cursor-pointer flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   <span>Yes! 🥰</span>
-                  <Heart className="w-5 h-5 fill-white" />
+                  <Heart className="w-5 h-5 fill-white shrink-0" />
                 </motion.button>
 
                 {/* NO BUTTON (Evasive trickster) */}
